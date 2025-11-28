@@ -1,0 +1,56 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #fafafa;
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 6px;
+  text-align: center;
+}
+
+th {
+  background-color: #f0f0f0;
+}
+
+.green { background-color: #a9e7a9 !important; }
+.yellow { background-color: #f8e98f !important; }
+.red { background-color: #f4a7a7 !important; }
+.highlight { background-color: #a0d8f1 !important; transition: background-color 0.5s ease; }
+.green-hover { background-color: #bdf4bd !important; }
+.yellow-hover { background-color: #fff3a6 !important; }
+.red-hover { background-color: #ffcccc !important; }
+
+input[type="text"], input[type="number"], input[type="email"] {
+  display: block;
+  margin: 8px 0 15px 0;
+  padding: 8px;
+  width: 100%;
+  max-width: 300px;
+}
+
+input[type="submit"], button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+input[type="submit"] { background-color: #2196F3; color: white; }
+input[type="submit"]:hover { background-color: #1976D2; }
+#showReportBtn { background-color: #4CAF50; color: white; margin: 0 5px; }
+#showReportBtn:hover { background-color: #45a049; }
+
+.container { margin-top: 30px; }
+h1, h2 { text-align: center; }
+#reportChart { min-width: 700px; max-width: 1200px; margin: 30px auto; display: block; }
+.center { text-align: center; }
+.note { font-size: 0.9em; color: #555; }
