@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attendance Page</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>WEB PAGE</h1>
+
+  <nav>
+    <a href="#">Home</a> |
+    <a href="#">Attendance list</a> |
+    <a href="#">Add student</a> |
+    <a href="#">Reports</a> |
+    <a href="#">Logout</a>
+  </nav>
+
+  <h2>Student Attendance</h2>
+
+
+  <div class="table-controls" style="text-align:center; margin-bottom:10px;">
+  <input type="text" id="searchInput" placeholder="Search by Name" style="padding:8px; width:200px;">
+  <button id="sortAbs">Sort by Absences</button>
+  <button id="sortPar">Sort by Participation</button>
+</div>
+
+<div id="sortMessage" style="text-align:center; margin-top:10px; font-weight:bold;"></div>
+
+
+
+  <!-- Tableau -->
+  <table border="1" class="table">
+    <thead>
+      <tr>
+        <th rowspan="2">ID</th>
+        <th rowspan="2">Last name</th>
+        <th rowspan="2">First name</th>
+        <th colspan="2">S1</th>
+        <th colspan="2">S2</th>
+        <th colspan="2">S3</th>
+        <th colspan="2">S4</th>
+        <th colspan="2">S5</th>
+        <th colspan="2">S6</th>
+        <th rowspan="2">Message</th>
+      </tr>
+      <tr>
+        <th>P</th><th>Pa</th>
+        <th>P</th><th>Pa</th>
+        <th>P</th><th>Pa</th>
+        <th>P</th><th>Pa</th>
+        <th>P</th><th>Pa</th>
+        <th>P</th><th>Pa</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>001</td>
+        <td>Hamichi</td>
+        <td>Lina Amel</td>
+        <td><input type="checkbox"></td><td><input type="checkbox"></td>
+        <td><input type="checkbox"></td><td><input type="checkbox"></td>
+        <td><input type="checkbox"></td><td><input type="checkbox"></td>
+        <td><input type="checkbox"></td><td><input type="checkbox"></td>
+        <td><input type="checkbox"></td><td><input type="checkbox"></td>
+        <td><input type="checkbox"></td><td><input type="checkbox"></td>
+        <td class="message-cell"></td>
+      </tr>
+
+      <tr>
+        <td>002</td>
+        <td>Ahmed</td>
+        <td>Sara</td>
+        <td><input type="checkbox"></td><td><input type="checkbox"></td>
+        <td><input type="checkbox"></td><td><input type="checkbox"></td>
+        <td><input type="checkbox"></td><td><input type="checkbox"></td>
+        <td><input type="checkbox"></td><td><input type="checkbox"></td>
+        <td><input type="checkbox"></td><td><input type="checkbox"></td>
+        <td><input type="checkbox"></td><td><input type="checkbox"></td>
+        <td class="message-cell"></td>
+      </tr>
+
+      <tr>
+        <td>003</td>
+        <td>Houcine</td>
+        <td>Rania</td>
+        <td><input type="checkbox"></td><td><input type="checkbox"></td>
+        <td><input type="checkbox"></td><td><input type="checkbox"></td>
+        <td><input type="checkbox"></td><td><input type="checkbox"></td>
+        <td><input type="checkbox"></td><td><input type="checkbox"></td>
+        <td><input type="checkbox"></td><td><input type="checkbox"></td>
+        <td><input type="checkbox"></td><td><input type="checkbox"></td>
+        <td class="message-cell"></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+<div style="text-align:center; margin:20px;">
+  <button class="btn6" id="highlightExcellent">Highlight Excellent Students</button>
+  <button class="btn6" id="resetColors">Reset Colors</button>
+</div>
+  
+
+
+
+
+<!-- Formulaire -->
+<form action="add_student.php" method="POST" class="student-form">
+
+    <label for="student-id">Student ID</label><br>
+    <input type="text" id="student-id" name="id" required><br>
+
+    <label for="lastname">Last name</label><br>
+    <input type="text" id="lastname" name="lastname" required><br>
+
+    <label for="firstname">First name</label><br>
+    <input type="text" id="firstname" name="firstname" required><br>
+
+    <label for="email">Email</label><br>
+    <input type="email" id="email" name="email" required><br>
+
+    <button type="submit">Submit</button>
+</form>
+
+
+  <!-- Message de confirmation -->
+  <div id="confirmation">✅ Student added successfully!</div>
+
+  <!-- Bouton pour afficher le rapport -->
+  <div class="centered-container">
+    <button id="showReport">Show Report</button>
+  </div>
+
+  <!-- Section du rapport -->
+  <section id="reportSection" style="display: none;">
+    
+
+    <div class="chart-container small-chart">
+      <h2>Attendance Report</h2>
+      <div class="canvas-wrapper">
+        <canvas id="attendanceChart"></canvas>
+        <div id="attendanceCenter" class="center-text"></div>
+      </div>
+    </div>
+
+    <div class="chart-container large-chart">
+      <h2>Student Attendance and Participation</h2>
+      <canvas id="participationChart"></canvas>
+    </div>
+  </section>
+
+
+
+<div id="popupMessage">
+  <div class="popup-content">
+    <span class="close-btn">&times;</span>
+    <p id="popupText"></p>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
